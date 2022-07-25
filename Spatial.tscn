@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://StartVR.cs" type="Script" id=1]
+[ext_resource path="res://Left_Controller.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/godot-openvr/scenes/ovr_left_hand.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/godot-openvr/scenes/ovr_right_hand.tscn" type="PackedScene" id=4]
+
+[node name="MainScene" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="ARVROrigin" type="ARVROrigin" parent="."]
+
+[node name="Left_Controller" parent="ARVROrigin" instance=ExtResource( 2 )]
+
+[node name="ARVRCamera" type="ARVRCamera" parent="ARVROrigin"]
+
+[node name="ovr_left_hand" parent="ARVROrigin" instance=ExtResource( 3 )]
+
+[node name="ovr_right_hand" parent="ARVROrigin" instance=ExtResource( 4 )]
